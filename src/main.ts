@@ -11,10 +11,7 @@ async function bootstrap() {
 
 	app.get("/profile/:walletAddress", getProfile);
 
-
-	app.use((_, res, __) => {
-		return res.sendStatus(404);
-	});
+	app.use((_, res, __) => res.sendStatus(404));
 
 	app.listen(3000);
 }
