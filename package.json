@@ -1,0 +1,25 @@
+{
+  "name": "moulaga-holder",
+  "version": "0.1.0",
+  "main": "./bin/main.js",
+  "author": "Paolo Manaois",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./bin/main.js",
+    "start:dev": "ts-node ./src/main.ts"
+  },
+  "dependencies": {
+    "@wagmi/core": "0.8.14",
+    "cors": "2.8.5",
+    "ethers": "5.7.2",
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.15",
+    "@types/node": "18.11.18",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.4"
+  }
+}
