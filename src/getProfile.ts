@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import MoulagaClient from "./moulagaSdk";
+import Crypto from "crypto";
 
 async function getProfile(req: Request, res: Response, next: NextFunction) {
 	const publicKey = req.query.publicKey as string;
@@ -13,13 +14,12 @@ async function getProfile(req: Request, res: Response, next: NextFunction) {
 			return res.sendStatus(401);
 		}
 	
-		const [data, keyCipher] = await Promise.all([
-			MoulagaClient.prepareDataForStorage(JSON.stringify({profile: "hello"}), "feeder"),
-			// replace by call to contract to retrieve cipher
-			Promise.resolve("")
-		]);
+		const data = await MoulagaClient.prepareDataForStorage(
+			JSON.stringify({profile: Crypto.randomBytes(16).toString("hex")}), 
+			feeder
+		);
 		
-		const payload = await MoulagaClient.prepareDataForConsumer(keyCipher, data, publicKey);
+		const payload = await MoulagaClient.prepareDataForConsumer(feeder, data, publicKey);
 	
 		return res.json(payload);
 
