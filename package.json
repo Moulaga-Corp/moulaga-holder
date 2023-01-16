@@ -7,8 +7,8 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "start": "node ./bin/main.js",
-    "start:dev": "ts-node ./src/main.ts"
+    "start": "node -r dotenv/config ./bin/main.js",
+    "start:dev": "ts-node -r dotenv/config ./src/main.ts"
   },
   "dependencies": {
     "@wagmi/core": "0.8.14",
