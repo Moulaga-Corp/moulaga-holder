@@ -12,6 +12,7 @@ async function onboard(req: Request, res: Response, next: NextFunction) {
 	try {
 		await MoulagaClient.onboardFeeder(feeder, feederPublicKey);
 		return res.sendStatus(201);
+		
 	} catch(err) {
 		return next(err);
 	}

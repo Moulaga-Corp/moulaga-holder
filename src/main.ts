@@ -1,13 +1,11 @@
 import Express from "express";
 import { getProfile } from "./getProfile";
 import { onboard } from "./onboard";
-import { register } from "./register";
 
 async function bootstrap() {
 	const app = Express();
 
 	app.post("/onboard", onboard);
-	app.post("/register", register);
 
 	app.get("/profile/:walletAddress", getProfile);
 
