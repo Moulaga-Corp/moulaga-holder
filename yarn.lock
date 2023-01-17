@@ -3145,9 +3145,9 @@ mocha@^10.2.0:
     yargs-parser "20.2.4"
     yargs-unparser "2.0.0"
 
-"moulaga-sdk@https://github.com/Moulaga-Corp/moulaga-sdk.git#main":
+"moulaga-sdk@https://github.com/Moulaga-Corp/moulaga-sdk#main":
   version "0.8.0"
-  resolved "https://github.com/Moulaga-Corp/moulaga-sdk.git#8f9898bb9157958fe5c59c3c6da13de0f1bc40f5"
+  resolved "https://github.com/Moulaga-Corp/moulaga-sdk#38ea9ad7197658f50bb9bf4f760c8fcfaefa8af2"
   dependencies:
     "@types/jest" "29.2.3"
     "@types/node" "18.11.9"

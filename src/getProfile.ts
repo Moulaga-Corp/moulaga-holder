@@ -5,7 +5,7 @@ import Crypto from "crypto";
 async function getProfile(req: Request, res: Response, next: NextFunction) {
 	const publicKey = req.query.publicKey as string;
 	const consumer = req.query.consumer as string;
-	const feeder = req.query.feeder as string;
+	const feeder = req.params.walletAddress as string;
 	const scheme = req.query.scheme as string;
 
 	try {
@@ -18,9 +18,7 @@ async function getProfile(req: Request, res: Response, next: NextFunction) {
 			JSON.stringify({profile: `Data from holder ! | ${Crypto.randomBytes(16).toString("hex")}`}), 
 			feeder
 		);
-		
 		const payload = await MoulagaClient.prepareDataForConsumer(feeder, data, publicKey);
-	
 		return res.json(payload);
 
 	} catch(err) {
