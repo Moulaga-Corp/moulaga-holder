@@ -15,7 +15,6 @@
     "cors": "2.8.5",
     "dotenv": "16.0.3",
     "env-var": "7.3.0",
-    "eth-crypto": "2.5.0",
     "ethers": "5.7.2",
     "express": "4.18.2",
     "moulaga-sdk": "https://github.com/Moulaga-Corp/moulaga-sdk.git#main"

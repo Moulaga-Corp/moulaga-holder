@@ -15,7 +15,7 @@ async function getProfile(req: Request, res: Response, next: NextFunction) {
 		}
 	
 		const data = await MoulagaClient.prepareDataForStorage(
-			JSON.stringify({profile: Crypto.randomBytes(16).toString("hex")}), 
+			JSON.stringify({profile: `Data from holder ! | ${Crypto.randomBytes(16).toString("hex")}`}), 
 			feeder
 		);
 		
