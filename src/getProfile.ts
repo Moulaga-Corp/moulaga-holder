@@ -11,7 +11,7 @@ async function getProfile(req: Request, res: Response, next: NextFunction) {
 	try {
 		const isAuthorized = await MoulagaClient.isAuthorized(feeder, consumer, scheme);
 		if (!isAuthorized) {
-			return res.sendStatus(401);
+			return res.status(401).json({ message: "No SBT !" });
 		}
 	
 		const data = await MoulagaClient.prepareDataForStorage(
