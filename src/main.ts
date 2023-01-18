@@ -1,4 +1,5 @@
 import Express, { NextFunction, Request, Response } from "express";
+import CONFIG from "./config";
 import { getProfile } from "./getProfile";
 
 async function bootstrap() {
@@ -10,7 +11,7 @@ async function bootstrap() {
 		res.status(400).json({ message: err.message });
 	})
 
-	app.listen(3000);
+	app.listen(CONFIG.PORT, () => console.log(`Listening on ${CONFIG.PORT}`));
 }
 
 bootstrap();
